@@ -77,11 +77,8 @@ articleView.setTeasers = function() {
   */
   $('.read-on').on('click', function(event) {
     event.preventDefault();
-    console.log($(this).parent().find('.article-body'));
-    console.log($(this).siblings('.article-body'));
     $(this).prev().find('*').show();
-    // $('.read-on').hide();
-    // $('.read-on').replaceWith('Show Less');
+    $(this).hide();
   })
 };
 
