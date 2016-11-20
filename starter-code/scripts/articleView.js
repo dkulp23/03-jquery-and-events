@@ -31,6 +31,7 @@ articleView.handleAuthorFilter = function() {
     /* Otherwise, we should:
         1. Show all the articles except the template */
       $('article').show();
+      $('.template').hide();
     }
     $('#category-filter').val('');
   });
@@ -74,6 +75,11 @@ articleView.setTeasers = function() {
 
     // STRETCH GOAl!: change the 'Read On' link to 'Show Less'
   */
+  $('.read-on').on('click', function(event) {
+    event.preventDefault();
+    $(this).prev().find('*').show();
+    $(this).hide();
+  })
 };
 
 // TODO: Invoke all of the above functions (I mean, methods!):
@@ -81,3 +87,4 @@ articleView.populateFilters();
 articleView.handleAuthorFilter();
 articleView.handleCategoryFilter();
 articleView.handleMainNav();
+articleView.setTeasers();
